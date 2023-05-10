@@ -4,7 +4,14 @@ void main() {
   runApp(const MyApp());
 }
 
-void test() {}
+// Single line comment
+
+/* Multi
+line
+comment*/
+
+/// Documentation for enum [FilterBy]
+enum FilterBy { company, city, state }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +19,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
