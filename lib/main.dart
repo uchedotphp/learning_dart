@@ -13,12 +13,70 @@ comment*/
 /// Documentation for enum [FilterBy]
 enum FilterBy { company, city, state }
 
+String firstName = 'Uchechukwu';
+String lastName = 'Nwulu';
+
+String fullName = 'Your full name is $firstName $lastName';
+String country = 'Nigeria';
+
+// const String fullName = 'Nwulu Uchechukwu Prince';
+String name = 'Uchechukwu';
+
+List contacts = [];
+
+class Fruit {
+  String name;
+  Fruit({required this.name}) : assert(name != null);
+}
+
+// Class Named Constructor
+class BaristaWithConstructor {
+  String name;
+  int experience;
+
+  BaristaWithConstructor({this.name = 'Sandy', this.experience = 4});
+
+  int getExp() {
+    return experience;
+  }
+}
+
+class BaristaInheritance extends BaristaWithConstructor {
+  int yearsOnTheJob;
+  BaristaInheritance({this.yearsOnTheJob = 3}) : super();
+}
+
+BaristaInheritance baristaInheritance = BaristaInheritance(yearsOnTheJob: 7);
+
+Fruit fruit = Fruit(name: 'apple');
+
+List addStuff() {
+  contacts.addAll(['Linda', 'John', 'Mary']);
+  contacts.forEach((element) {
+    print(element + 's');
+  });
+  return contacts;
+}
+
+bool orderEspresso1([howManyCups]) {
+  print('Cups #: $howManyCups');
+  bool ordered = false;
+  if (howManyCups != null) {
+    ordered = true;
+  }
+  return ordered;
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    country = 'Canada';
+    BaristaWithConstructor barister =
+        BaristaWithConstructor(name: 'Donald', experience: 10);
+    print(barister.getExp());
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
